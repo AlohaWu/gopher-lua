@@ -21,7 +21,7 @@ var tableFuncs = map[string]LGFunction{
 
 func tableSort(L *LState) int {
 	tbl := L.CheckTable(1)
-	sorter := lValueArraySorter{L, nil, tbl.array}
+	sorter := lValueArraySorter{L, nil, tbl.array, tbl}
 	if L.GetTop() != 1 {
 		sorter.Fn = L.CheckFunction(2)
 	}
@@ -66,7 +66,7 @@ func tableConcat(L *LState) int {
 		L.Push(emptyLString)
 		return 1
 	}
-	//TODO should flushing?
+	// TODO should flushing?
 	retbottom := L.GetTop()
 	for ; i <= j; i++ {
 		v := tbl.RawGetInt(i)

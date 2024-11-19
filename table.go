@@ -1,16 +1,19 @@
 package lua
 
-const defaultArrayCap = 32
-const defaultHashCap = 32
+const (
+	defaultArrayCap = 32
+	defaultHashCap  = 32
+)
 
 type lValueArraySorter struct {
 	L      *LState
 	Fn     *LFunction
 	Values []LValue
+	tbl    *LTable
 }
 
 func (lv lValueArraySorter) Len() int {
-	return len(lv.Values)
+	return lv.tbl.Len()
 }
 
 func (lv lValueArraySorter) Swap(i, j int) {
