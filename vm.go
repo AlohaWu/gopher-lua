@@ -1277,9 +1277,9 @@ func init() {
 
 							ls.reg.SetTop(cf.LocalBase + nargs + np)
 							for i := 0; i < np; i++ {
-								//ls.reg.Set(cf.LocalBase+nargs+i, ls.reg.Get(cf.LocalBase+i))
+								// ls.reg.Set(cf.LocalBase+nargs+i, ls.reg.Get(cf.LocalBase+i))
 								ls.reg.array[cf.LocalBase+nargs+i] = ls.reg.array[cf.LocalBase+i]
-								//ls.reg.Set(cf.LocalBase+i, LNil)
+								// ls.reg.Set(cf.LocalBase+i, LNil)
 								ls.reg.array[cf.LocalBase+i] = LNil
 							}
 
@@ -1291,7 +1291,7 @@ func init() {
 										argtb.RawSetInt(i+1, ls.reg.Get(cf.LocalBase+np+i))
 									}
 									argtb.RawSetString("n", LNumber(nvarargs))
-									//ls.reg.Set(cf.LocalBase+nargs+np, argtb)
+									// ls.reg.Set(cf.LocalBase+nargs+np, argtb)
 									ls.reg.array[cf.LocalBase+nargs+np] = argtb
 								} else {
 									ls.reg.array[cf.LocalBase+nargs+np] = LNil
@@ -1459,9 +1459,9 @@ func init() {
 
 							ls.reg.SetTop(cf.LocalBase + nargs + np)
 							for i := 0; i < np; i++ {
-								//ls.reg.Set(cf.LocalBase+nargs+i, ls.reg.Get(cf.LocalBase+i))
+								// ls.reg.Set(cf.LocalBase+nargs+i, ls.reg.Get(cf.LocalBase+i))
 								ls.reg.array[cf.LocalBase+nargs+i] = ls.reg.array[cf.LocalBase+i]
-								//ls.reg.Set(cf.LocalBase+i, LNil)
+								// ls.reg.Set(cf.LocalBase+i, LNil)
 								ls.reg.array[cf.LocalBase+i] = LNil
 							}
 
@@ -1473,7 +1473,7 @@ func init() {
 										argtb.RawSetInt(i+1, ls.reg.Get(cf.LocalBase+np+i))
 									}
 									argtb.RawSetString("n", LNumber(nvarargs))
-									//ls.reg.Set(cf.LocalBase+nargs+np, argtb)
+									// ls.reg.Set(cf.LocalBase+nargs+np, argtb)
 									ls.reg.array[cf.LocalBase+nargs+np] = argtb
 								} else {
 									ls.reg.array[cf.LocalBase+nargs+np] = LNil
